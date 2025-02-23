@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOGO Offer</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+<link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="header">
+      <h1>YAY! It's BOGO</h1>
+    </header>
+
+    <main>
+      <div class="price-box" onclick="selectBox(1)">
+        <div class="price-header">
+          <div class="unit-info">
+            <span class="radio-custom"></span>
+            <span class="unit-1">1 Unit</span>
+            <span class="discount-badge">10% Off</span>
+          </div>
+          <div class="price-container">
+            <span class="price">$10.00 USD</span>
+            <span class="original-price">$24.00 USD</span>
+          </div>
+        </div>
+        <div class="standard-price">Standard Price</div>
+        <div class="selection-container">
+          <div class="selection-labels">
+            <span class="selection-label size">Size</span>
+            <span class="selection-label  color">Color</span>
+          </div>
+          <div class="size-color-grid">
+            <span class="item-number">#1</span>
+            <select>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+            </select>
+            <select>
+              <option>Black</option>
+              <option>White</option>
+              <option>Blue</option>
+            </select>
+            <span class="item-number">#2</span>
+            <select>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+            </select>
+            <select>
+              <option>Colour</option>
+              <option>Black</option>
+              <option>White</option>
+              <option>Blue</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="price-box" onclick="selectBox(2)">
+        <span class="most-popular">MOST POPULAR</span>
+        <div class="price-header">
+          <div class="unit-info">
+            <span class="radio-custom"></span>
+            <span class="unit-1">2 Unit</span>
+            <span class="discount-badge">20% Off</span>
+          </div>
+          <div class="price-container">
+            <span class="price">$18.00 USD</span>
+            <span class="original-price">$24.00 USD</span>
+          </div>
+        </div>
+        <div class="selection-container">
+          <div class="selection-labels">
+            <span class="selection-label size">Size</span>
+            <span class="selection-label color">Color</span>
+          </div>
+          <div class="size-color-grid">
+            <span class="item-number">#1</span>
+            <select>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+            </select>
+            <select>
+              <option>Black</option>
+              <option>White</option>
+              <option>Blue</option>
+            </select>
+            <span class="item-number">#2</span>
+            <select>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+            </select>
+            <select>
+              <option>Colour</option>
+              <option>Black</option>
+              <option>White</option>
+              <option>Blue</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="price-box" onclick="selectBox(3)">
+        <div class="price-header">
+          <div class="unit-info">
+            <span class="radio-custom"></span>
+            <span class="unit-1">3 Unit</span>
+            <span class="discount-badge">30% Off</span>
+          </div>
+          <div class="price-container">
+            <span class="price">$24.00 USD</span>
+            <span class="original-price">$24.00 USD</span>
+          </div>
+        </div>
+        <div class="selection-container">
+          <div class="selection-labels">
+            <span class="selection-label size">Size</span>
+            <span class="selection-label color">Color</span>
+          </div>
+          <div class="size-color-grid">
+            <span class="item-number">#1</span>
+            <select>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+            </select>
+            <select>
+              <option>Black</option>
+              <option>White</option>
+              <option>Blue</option>
+            </select>
+            <span class="item-number">#2</span>
+            <select>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+            </select>
+            <select>
+              <option>Colour</option>
+              <option>Black</option>
+              <option>White</option>
+              <option>Blue</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="delivery-total">
+        <span class="free-delivery">Free Delivery</span>
+        <span class="total">Total : $18.00 USD</span>
+      </div>
+
+      <button class="cart-button">Add to Cart</button>
+    </main>
+
+    <footer>@ Powered by Pumper</footer>
+
+    <script>
+      function selectBox(boxNumber) {
+        const boxes = document.querySelectorAll(".price-box");
+        boxes.forEach((box, index) => {
+          if (index + 1 === boxNumber) {
+            box.classList.add("selected");
+          } else {
+            box.classList.remove("selected");
+          }
+        });
+
+        // Update total price based on selected box
+        const totalElement = document.querySelector(".total");
+        const selectedPrice = document.querySelector(
+          ".price-box.selected .price"
+        ).textContent;
+        totalElement.textContent = `Total : ${selectedPrice}`;
+      }
+    </script>
+  </body>
+</html>
